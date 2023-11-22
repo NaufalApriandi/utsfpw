@@ -55,6 +55,7 @@
 </head>
 <body>
     <form method="POST" action="{{ route('process-product') }}">
+        
         @csrf
         <label for="KodeBarang">Kode Barang:</label>
         <input type="text" name="KodeBarang" required>

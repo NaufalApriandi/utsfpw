@@ -16,6 +16,7 @@ class ProductController extends Controller
 
     public function processProduct(Request $request)
     {
+        
         $request->validate([
             'KodeBarang' => 'required',
             'NamaBarang' => 'required',
