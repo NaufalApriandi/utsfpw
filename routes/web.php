@@ -12,3 +12,4 @@ Route::get('/product-result/{id}', [ProductController::class, 'showResult'])->na
 Route::get('/utama', [ProductController::class, 'utama'])->name('utama');
 Route::get('/edit-form/{id}', [ProductController::class, 'editForm'])->name('edit.form');
 Route::post('/edit-form/{id}', [ProductController::class, 'edit'])->name('edit');
+Route::get('/delete/{id}',  [ProductController::class, 'delete'])->name('delete');

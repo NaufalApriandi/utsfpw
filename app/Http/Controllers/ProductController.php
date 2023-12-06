@@ -40,7 +40,7 @@ class ProductController extends Controller
         $product = Product::create($request->except('_token'));
 
 
-        return redirect()->route('product-result', ['id' => $product->id]);
+        return redirect()->route('home');
     }
 
     public function showResult($id)
@@ -93,6 +93,18 @@ class ProductController extends Controller
 
         }
     }
+
+    public function delete($id) {
+
+    $barang = Product::find($id);
+    if ($barang) {
+        $barang->delete();
+        return redirect()->route('home')->with('success', 'Product deleted successfully');
+    } else {
+        return redirect()->route('home')->with('error', 'Product not found');
+    }
+}
+
 
     private function hitungDiskon($totalHarga)
     {
